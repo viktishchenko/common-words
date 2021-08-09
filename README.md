@@ -15,6 +15,7 @@
 
 **пример :**
 ```css
+
 .declaration-order {
   /* Позиционирование */
   position: absolute;
@@ -54,9 +55,61 @@
   will-change: auto;
 }
 
+```
 
+## Порядок атрибутов
+
+Атрибут class идёт сразу после имени тега.
+Атрибуты идут в одном порядке, чтобы упростить их чтение.
+
+```css
+
+<label class="field-group-label" for="appointment-phone">
+<input class="field-group-input field" type="text" id="appointment-phone" placeholder="+7 000-00-00">
+
+<label class="field-group-label" for="appointment-date">
+<input class="field-group-input field" type="text" id="appointment-date" placeholder="01.01.2020">
 
 ```
+
+## Доступное скрытие
+
+Контент скрыт утилитарным классом `visually-hidden`, чтобы он был доступен для скринридеров и поисковиков.
+
+```css
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+<h2 class="visually-hidden">Заголовок</h2>
+
+```
+
+## Размеры замещаемых элементов
+
+У изображений, видео и iframe указаны размеры.
+о возможности изображениям указываются действительные размеры, так как это улучшает производительность отрисовки страницы: браузер не будет перерисовывать страницу в процессе загрузки и отображения изображения.
+В атрибутах нет единиц измерения.
+
+```css
+
+<img src="logo.png" alt="" width="300" height="150">
+<svg width="16" height="16" xmlns="http://www.w3.org/2000/svg"></svg>
+<video src="source/video.mp4" width="400" height="400"></video>
+<iframe src="https://maps.google.com" width="400" height="400"></iframe>
+
+```
+
 
 
 ## Изображения
